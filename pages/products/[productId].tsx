@@ -33,8 +33,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
   
   const products = await stripe.products.list();
 
-  // console.log('products:',products.data)
-
   const paths = products.data.map(product => {
     return {
       params: {
@@ -42,8 +40,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
       }
     }
   })
-
-  // console.log('paths:',paths);
 
   return {
     paths,
@@ -60,8 +56,6 @@ export const getStaticProps: GetStaticProps = async ({params}) => {
   const filteredPrice = await stripe.prices.list(
     {product: product.id}
   )
-
-  // const price = filteredPrice.data[0];
 
   return {
     props: {

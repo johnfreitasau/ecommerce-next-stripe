@@ -26,7 +26,7 @@ const CheckoutButton: React.FC<CheckoutButtonProps> = ({ priceId, productName, i
       }],
       mode: 'payment',
       successUrl: `http://localhost:3000/products/success?itemName=${productName}`,
-      cancelUrl: 'http://localhost:3000/cancel',
+      cancelUrl: 'http://localhost:3000/products/cancel',
     });
     // If `redirectToCheckout` fails due to a browser or network
     // error, display the localized error message to your customer
